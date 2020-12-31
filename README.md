@@ -1,7 +1,7 @@
 ## Make your kindle4rss.com free
 
 #### What is this?
-It clicks on button to deliver new content on your kindle. I don't have money to pay subscription so I wrote this script. If you have money, please buy subscription and don't use this.
+It clicks on button to deliver new content on your kindle. If anybody out there knows of a good self-hosted alternative to kindle4rss.com, let me know.
 
 #### Instructions
 * change username and password at the beginning of the script
