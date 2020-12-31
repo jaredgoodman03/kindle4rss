@@ -1,26 +1,24 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import os
 import sys
-import urllib, urllib2
-from BeautifulSoup import BeautifulSoup
+import urllib
+from urllib import request
+from bs4 import BeautifulSoup
 
 BASE_URL = 'http://kindle4rss.com/'
-USERNAME = ''
-PASSWORD = ''
+USERNAME = 'jaredgoodman03@gmail.com'
+PASSWORD = 'vVsafmpTMxww6rp'
 
 # build opener
-o = urllib2.build_opener(urllib2.HTTPCookieProcessor())
-urllib2.install_opener(o)
+o = request.build_opener(request.HTTPCookieProcessor())
+request.install_opener(o)
 
 # login
-p = urllib.urlencode({'email_address': USERNAME, 'password': PASSWORD})
-doc = BeautifulSoup(o.open(BASE_URL + '/login/',  p).read().decode('utf8', 'replace'))
+p = bytes(urllib.parse.urlencode({'email_address': USERNAME, 'password': PASSWORD}), 'utf-8')
+doc = BeautifulSoup(o.open(BASE_URL + '/login/',  p).read().decode('utf8', 'replace'), features='html.parser')
 
 # get list of courses
-doc = BeautifulSoup(o.open(BASE_URL,  p).read().decode('utf8', 'replace'))
+doc = BeautifulSoup(o.open(BASE_URL,  p).read().decode('utf8', 'replace'), features='html.parser')
 
-if not doc:
-    sys.exit(3)
-else:
-    if int(doc.em.text)>0:
-        BeautifulSoup(o.open(BASE_URL + '/send_now/').read().decode('utf8', 'replace'))
+
+BeautifulSoup(o.open(BASE_URL + '/send_now/').read().decode('utf8', 'replace'))
