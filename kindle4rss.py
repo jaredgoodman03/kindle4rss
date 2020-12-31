@@ -6,8 +6,8 @@ from urllib import request
 from bs4 import BeautifulSoup
 
 BASE_URL = 'http://kindle4rss.com/'
-USERNAME = 'jaredgoodman03@gmail.com'
-PASSWORD = 'vVsafmpTMxww6rp'
+USERNAME = ''
+PASSWORD = ''
 
 # build opener
 o = request.build_opener(request.HTTPCookieProcessor())
